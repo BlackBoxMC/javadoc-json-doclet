@@ -147,8 +147,10 @@ public class Main {
                     return parseType(f);
                 }).collect(Collectors.toList());
             props.put("generics",damn);
-        } else 
+        } else {
+
             props.put("generics",new ArrayList<>());
+        }
         return props;
     }
 
@@ -174,6 +176,12 @@ public class Main {
             prms.add(parseParameter(pm));
         }
         props.put("parameters",prms);
+
+        ArrayList<Object> damn = (ArrayList<Object>) new ArrayList<>(
+                Arrays.asList(cn.typeParameters())).stream().map(f -> {
+                    return parseType(f);
+                }).collect(Collectors.toList());
+        props.put("generics",damn);
         return props;
     }
 
