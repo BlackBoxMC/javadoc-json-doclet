@@ -142,7 +142,7 @@ public class Main {
         ParameterizedType yeah = t.asParameterizedType();
         
         if(yeah != null) {
-            ArrayList<Object> damn = (ArrayList<String>) new ArrayList<>(
+            ArrayList<Object> damn = (ArrayList<Object>) new ArrayList<>(
                 Arrays.asList(yeah.typeArguments())).stream().map(f -> {
                     return parseType(f);
                 }).collect(Collectors.toList());
