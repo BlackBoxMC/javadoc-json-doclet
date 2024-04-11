@@ -147,7 +147,8 @@ public class Main {
                     return parseType(f);
                 }).collect(Collectors.toList());
             props.put("generics",damn);
-        }
+        } else 
+            props.put("generics",new ArrayList<>());
         return props;
     }
 
